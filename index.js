@@ -318,6 +318,7 @@ class VacBot {
   }
 
   _handle_clean_report(iq) {
+    if (!(iq && iq.attrs)) return;
     this.clean_status = iq.attrs['type'];
     envLog("[VacBot] *** clean_status = " + this.clean_status);
   }
